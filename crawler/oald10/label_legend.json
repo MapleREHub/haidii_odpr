@@ -1,0 +1,400 @@
+{
+  "etymology": {
+    "from Chinese": {
+      "en": "源自汉语",
+      "zh": "源自汉语"
+    },
+    "from French": {
+      "en": "源自法语",
+      "zh": "源自法语"
+    },
+    "from German": {
+      "en": "源自德语",
+      "zh": "源自德语"
+    },
+    "from Italian": {
+      "en": "源自意大利语",
+      "zh": "源自意大利语"
+    },
+    "from Japanese": {
+      "en": "源自日语",
+      "zh": "源自日语"
+    },
+    "from Latin": {
+      "en": "源自拉丁语",
+      "zh": "源自拉丁语"
+    },
+    "from Portuguese": {
+      "en": "源自葡萄牙语",
+      "zh": "源自葡萄牙语"
+    },
+    "from Russian": {
+      "en": "源自俄语",
+      "zh": "源自俄语"
+    },
+    "from Spanish": {
+      "en": "源自西班牙语",
+      "zh": "源自西班牙语"
+    },
+    "from Swedish": {
+      "en": "源自瑞典语",
+      "zh": "源自瑞典语"
+    }
+  },
+  "grammar": {
+    "countable": {
+      "en": "4_Countable nouns [C]",
+      "zh": "可数名词"
+    },
+    "countable + singular or plural verb": {
+      "en": "4_Nouns with singular or plural verbs",
+      "zh": "可数名词，与单数或复数动词连用"
+    },
+    "intransitive": {
+      "en": "2_Intransitive verbs",
+      "zh": "不及物动词"
+    },
+    "plural": {
+      "en": "4_Plural nouns",
+      "zh": "复数名词"
+    },
+    "plural verb": {
+      "en": "与复数动词连用",
+      "zh": "与复数动词连用"
+    },
+    "singular": {
+      "en": "4_Singular [sing.]",
+      "zh": "单数名词"
+    },
+    "singular + singular or plural verb": {
+      "en": "4_Nouns with singular or plural verbs",
+      "zh": "单数名词，与单数或复数动词连用"
+    },
+    "singular or plural verb": {
+      "en": "4_Nouns with singular or plural verbs",
+      "zh": "可与单数或复数动词连用"
+    },
+    "transitive": {
+      "en": "2_Transitive verbs",
+      "zh": "及物动词"
+    },
+    "uncountable": {
+      "en": "4_Uncountable nouns [U]",
+      "zh": "不可数名词"
+    },
+    "uncountable + singular or plural verb": {
+      "en": "4_Nouns with singular or plural verbs",
+      "zh": "不可数名词，与单数或复数动词连用"
+    }
+  },
+  "other": {
+    "SEAsianE": {
+      "en": "东南亚英语",
+      "zh": "东南亚英语"
+    },
+    "after noun": {
+      "en": "4_[after noun]",
+      "zh": "置于名词后"
+    },
+    "exclamation": {
+      "en": "感叹词",
+      "zh": "感叹词"
+    },
+    "figurative": {
+      "en": "比喻",
+      "zh": "比喻"
+    },
+    "frequent": {
+      "en": "使用频率较低",
+      "zh": "使用频率较低"
+    },
+    "no passive": {
+      "en": "不能用于被动语态",
+      "zh": "不能用于被动语态"
+    },
+    "non-standard": {
+      "en": "非规范用语",
+      "zh": "非规范用语"
+    },
+    "not before noun": {
+      "en": "4_[not before noun]",
+      "zh": "不能用于名词前"
+    },
+    "not usually before noun": {
+      "en": "4_[not usually before noun]",
+      "zh": "通常不用于名词前"
+    },
+    "number": {
+      "en": "数词",
+      "zh": "数词"
+    },
+    "often passive": {
+      "en": "常用于被动语态",
+      "zh": "常用于被动语态"
+    },
+    "old use": {
+      "en": "旧用法",
+      "zh": "旧用法"
+    },
+    "old-fashioned": {
+      "en": "老式用法",
+      "zh": "老式用法"
+    },
+    "only before noun": {
+      "en": "4_[only before noun]",
+      "zh": "只用于名词前"
+    },
+    "saying": {
+      "en": "谚语、格言或警句",
+      "zh": "谚语、格言或警句"
+    },
+    "specialist": {
+      "en": "专业术语",
+      "zh": "专业术语"
+    },
+    "taboo": {
+      "en": "禁忌语",
+      "zh": "禁忌语"
+    },
+    "usually before noun": {
+      "en": "4_[usually before noun]",
+      "zh": "通常用于名词前"
+    },
+    "usually passive": {
+      "en": "通常用于被动语态",
+      "zh": "通常用于被动语态"
+    },
+    "usually plural": {
+      "en": "4_Plural nouns",
+      "zh": "通常为复数名词"
+    },
+    "usually singular": {
+      "en": "4_Singular [sing.]",
+      "zh": "通常为单数名词"
+    }
+  },
+  "part_of_speech": {
+    "abbreviation": {
+      "en": "缩写",
+      "zh": "缩写"
+    },
+    "adjective": {
+      "en": "4_Adjectives",
+      "zh": "形容词"
+    },
+    "adverb": {
+      "en": "副词",
+      "zh": "副词"
+    },
+    "auxiliary verb": {
+      "en": "助动词",
+      "zh": "助动词"
+    },
+    "combining form": {
+      "en": "构词成分",
+      "zh": "构词成分"
+    },
+    "conjunction": {
+      "en": "连词",
+      "zh": "连词"
+    },
+    "definite article": {
+      "en": "定冠词",
+      "zh": "定冠词"
+    },
+    "determiner": {
+      "en": "限定词",
+      "zh": "限定词"
+    },
+    "indefinite article": {
+      "en": "不定冠词",
+      "zh": "不定冠词"
+    },
+    "infinitive marker": {
+      "en": "不定式标记",
+      "zh": "不定式标记"
+    },
+    "linking verb": {
+      "en": "2_Linking verbs",
+      "zh": "连系动词"
+    },
+    "modal verb": {
+      "en": "情态动词",
+      "zh": "情态动词"
+    },
+    "noun": {
+      "en": "4_Nouns",
+      "zh": "名词"
+    },
+    "ordinal number": {
+      "en": "序数词",
+      "zh": "序数词"
+    },
+    "prefix": {
+      "en": "前缀",
+      "zh": "前缀"
+    },
+    "preposition": {
+      "en": "介词",
+      "zh": "介词"
+    },
+    "pronoun": {
+      "en": "代词",
+      "zh": "代词"
+    },
+    "suffix": {
+      "en": "后缀",
+      "zh": "后缀"
+    },
+    "symbol": {
+      "en": "符号",
+      "zh": "符号"
+    },
+    "verb": {
+      "en": "2_Verbs",
+      "zh": "动词"
+    }
+  },
+  "regional": {
+    "AustralE": {
+      "en": "澳大利亚英语",
+      "zh": "澳大利亚英语"
+    },
+    "BrE": {
+      "en": "11_British and American English",
+      "zh": "英式英语"
+    },
+    "CanE": {
+      "en": "加拿大英语",
+      "zh": "加拿大英语"
+    },
+    "EAfrE": {
+      "en": "东非英语",
+      "zh": "东非英语"
+    },
+    "IndE": {
+      "en": "印度英语",
+      "zh": "印度英语"
+    },
+    "IrishE": {
+      "en": "爱尔兰英语",
+      "zh": "爱尔兰英语"
+    },
+    "NAmE": {
+      "en": "11_British and American English",
+      "zh": "美式英语"
+    },
+    "NEngE": {
+      "en": "英格兰北部英语",
+      "zh": "英格兰北部英语"
+    },
+    "NZE": {
+      "en": "新西兰英语",
+      "zh": "新西兰英语"
+    },
+    "SAfrE": {
+      "en": "南非英语",
+      "zh": "南非英语"
+    },
+    "ScotE": {
+      "en": "苏格兰英语",
+      "zh": "苏格兰英语"
+    },
+    "US": {
+      "en": "美国英语",
+      "zh": "美国英语"
+    },
+    "WAfrE": {
+      "en": "西非英语",
+      "zh": "西非英语"
+    },
+    "WelshE": {
+      "en": "威尔士英语",
+      "zh": "威尔士英语"
+    },
+    "dialect": {
+      "en": "方言",
+      "zh": "方言"
+    }
+  },
+  "register": {
+    "approving": {
+      "en": "褒义词",
+      "zh": "褒义词"
+    },
+    "disapproving": {
+      "en": "贬义词",
+      "zh": "贬义词"
+    },
+    "formal": {
+      "en": "正式用语",
+      "zh": "正式用语"
+    },
+    "humorous": {
+      "en": "幽默语",
+      "zh": "幽默语"
+    },
+    "informal": {
+      "en": "非正式用语",
+      "zh": "非正式用语"
+    },
+    "ironic": {
+      "en": "反语",
+      "zh": "反语"
+    },
+    "literary": {
+      "en": "文学用语",
+      "zh": "文学用语"
+    },
+    "offensive": {
+      "en": "冒犯语",
+      "zh": "冒犯语"
+    },
+    "slang": {
+      "en": "俚语",
+      "zh": "俚语"
+    }
+  },
+  "word_form": {
+    "comparative": {
+      "en": "比较级形式",
+      "zh": "比较级形式"
+    },
+    "feminine": {
+      "en": "阴性形式",
+      "zh": "阴性形式"
+    },
+    "negative": {
+      "en": "否定式",
+      "zh": "否定式"
+    },
+    "past participle": {
+      "en": "过去分词",
+      "zh": "过去分词"
+    },
+    "past tense": {
+      "en": "过去式",
+      "zh": "过去式"
+    },
+    "present participle": {
+      "en": "现在分词",
+      "zh": "现在分词"
+    },
+    "rare short form": {
+      "en": "罕见简略式",
+      "zh": "罕见简略式"
+    },
+    "short form": {
+      "en": "简略式",
+      "zh": "简略式"
+    },
+    "superlative": {
+      "en": "最高级形式",
+      "zh": "最高级形式"
+    },
+    "third person singular present tense": {
+      "en": "第三人称单数现在时",
+      "zh": "第三人称单数现在时"
+    }
+  }
+}

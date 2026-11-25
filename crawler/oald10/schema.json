@@ -1,0 +1,879 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/local/oxford-dict/schema/entry.schema.json",
+  "title": "牛津高阶英汉双解词典（第10版）词条",
+  "description": "单个词条的完整 JSON 文档。所有 ID 统一为字符串；所有编码值都在 label_legend.json / enums 中有对照说明。",
+  "type": "object",
+  "required": [
+    "_meta",
+    "word",
+    "key",
+    "uwid",
+    "entry_uwids",
+    "entry_group_count",
+    "entry_type",
+    "pronunciations",
+    "tags",
+    "entries",
+    "definitions",
+    "edition_definition",
+    "shared_definition",
+    "senses",
+    "examples",
+    "phrases",
+    "images",
+    "links",
+    "stats"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "required": [
+        "schema",
+        "generated_at",
+        "dtype",
+        "edition",
+        "source",
+        "ok",
+        "integrity"
+      ],
+      "properties": {
+        "schema": {
+          "type": "string",
+          "const": "oxford-dict.crawl/3"
+        },
+        "generated_at": {
+          "type": "string",
+          "description": "ISO8601 本地时间"
+        },
+        "dtype": {
+          "type": "string",
+          "pattern": "^[0-9]{5}$",
+          "description": "目标词典版本码，17208 = 第10版"
+        },
+        "edition": {
+          "type": "object",
+          "required": [
+            "dtype",
+            "name",
+            "version"
+          ],
+          "properties": {
+            "dtype": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "english_name": {
+              "type": "string"
+            },
+            "publisher": {
+              "type": "string"
+            },
+            "cover": {
+              "type": "string"
+            }
+          }
+        },
+        "source": {
+          "type": "object",
+          "description": "数据来源；不得包含本机绝对路径",
+          "properties": {
+            "apk": {
+              "type": "string"
+            },
+            "package": {
+              "type": "string"
+            },
+            "libraries": {
+              "type": "object"
+            }
+          },
+          "not": {
+            "required": [
+              "decoded_dir"
+            ]
+          }
+        },
+        "ok": {
+          "type": "boolean"
+        },
+        "integrity": {
+          "type": "object",
+          "required": [
+            "content_sha256"
+          ],
+          "properties": {
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "counts": {
+          "type": "object"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation": {
+          "type": "object",
+          "required": [
+            "passed",
+            "errors"
+          ],
+          "properties": {
+            "passed": {
+              "type": "boolean"
+            },
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "validator": {
+              "type": "string",
+              "enum": [
+                "jsonschema",
+                "builtin"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "word": {
+      "type": "string",
+      "description": "词条文本"
+    },
+    "key": {
+      "type": "string",
+      "description": "索引中的规范 key"
+    },
+    "uwid": {
+      "type": "string",
+      "pattern": "^([0-9]+)?$",
+      "description": "主词条 ID；该词在 dict.raw 中没有词条（只出现在例句里，如专有名词 Liszt）时为空串"
+    },
+    "entry_uwids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9]+$"
+      },
+      "description": "该词在词库中的全部条目 uwid（同一词的不同义项组）"
+    },
+    "entry_group_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "义项组数量；该词在 dict.raw 中没有词条时为 0"
+    },
+    "entry_type": {
+      "type": "string",
+      "enum": [
+        "word",
+        "phrase",
+        "derivative",
+        "idiom",
+        "phraseVerb",
+        "unknown"
+      ],
+      "description": "条目类型；见 enums.json"
+    },
+    "frequency": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "词频（源字段 renqun）"
+    },
+    "cefr": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "CEFR 等级 A1–C2，无则 null"
+    },
+    "oxford_3000": {
+      "type": "boolean",
+      "description": "是否牛津 3000 核心词"
+    },
+    "oxford_5000": {
+      "type": "boolean",
+      "description": "是否牛津 5000 核心词"
+    },
+    "pronunciations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "lang",
+          "lang_label",
+          "ipa",
+          "scode",
+          "audio_file",
+          "audio_url",
+          "audio_url_known"
+        ],
+        "properties": {
+          "lang": {
+            "type": "string",
+            "pattern": "^([a-z]{1,3})?$",
+            "description": "发音语言码：b=英式 u=美式 z=中文；少见码见 enums.json"
+          },
+          "lang_label": {
+            "type": "string"
+          },
+          "pos": {
+            "type": "string"
+          },
+          "ipa": {
+            "type": "string",
+            "description": "音标；无则空串"
+          },
+          "scode": {
+            "type": "string",
+            "description": "不透明的发音记录 ID（无解码表）"
+          },
+          "scode_note": {
+            "type": "string"
+          },
+          "audio_file": {
+            "type": "string"
+          },
+          "audio_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "完整直链；本地无法确定时为 null"
+          },
+          "audio_url_known": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "tags": {
+      "type": "object",
+      "description": "按类别归组的标签；标签释义见 label_legend.json",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "key",
+            "category",
+            "label",
+            "label_en"
+          ],
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string",
+              "enum": [
+                "grammar",
+                "regional",
+                "part_of_speech",
+                "word_form",
+                "register",
+                "etymology",
+                "topic",
+                "usage_box",
+                "other"
+              ]
+            },
+            "label": {
+              "type": "string"
+            },
+            "label_en": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "type": "object",
+      "description": "按词典版本严格隔离的释义；key 为 dtype 字符串",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "chn",
+          "def",
+          "pos"
+        ],
+        "properties": {
+          "chn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "def": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "edition_definition": {
+      "type": "object",
+      "description": "仅目标版本的释义",
+      "required": [
+        "chn",
+        "def",
+        "pos"
+      ],
+      "properties": {
+        "chn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "def": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "shared_definition": {
+      "type": "object",
+      "description": "词头主记录的公共释义（可能来自其它版本，已标注来源）",
+      "required": [
+        "chn",
+        "def",
+        "pos",
+        "source_dtype"
+      ],
+      "properties": {
+        "chn": {
+          "type": "string"
+        },
+        "def": {
+          "type": "string"
+        },
+        "pos": {
+          "type": "string"
+        },
+        "source_dtype": {
+          "type": "string"
+        },
+        "source_dtype_note": {
+          "type": "string"
+        }
+      }
+    },
+    "senses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "uwid",
+          "parent_uwid",
+          "defdtype",
+          "chn",
+          "def",
+          "chn_plain",
+          "def_plain",
+          "tags"
+        ],
+        "properties": {
+          "uwid": {
+            "type": "string"
+          },
+          "parent_uwid": {
+            "type": "string"
+          },
+          "defdtype": {
+            "type": "string"
+          },
+          "chn": {
+            "type": "string"
+          },
+          "def": {
+            "type": "string"
+          },
+          "chn_plain": {
+            "type": "string"
+          },
+          "def_plain": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "object"
+          },
+          "cross_refs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "uwid",
+          "parent_uwid",
+          "dtype",
+          "sentence",
+          "translation",
+          "translation_plain",
+          "audio"
+        ],
+        "properties": {
+          "uwid": {
+            "type": "string"
+          },
+          "parent_uwid": {
+            "type": "string"
+          },
+          "parent_word": {
+            "type": "string"
+          },
+          "dtype": {
+            "type": "string"
+          },
+          "flag": {
+            "type": "string",
+            "description": "固定为 example"
+          },
+          "collect_head": {
+            "type": "string",
+            "description": "首字母分组标记 A/B/C…T，见 enums.json"
+          },
+          "sentence": {
+            "type": "string"
+          },
+          "translation": {
+            "type": "string",
+            "description": "原文，可能带 <ch> 标记"
+          },
+          "translation_plain": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "audio": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "phrases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "uwid",
+          "key",
+          "parent_uwid",
+          "defdtype",
+          "type",
+          "chn",
+          "all_chn",
+          "all_def"
+        ],
+        "properties": {
+          "uwid": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "parent_uwid": {
+            "type": "string"
+          },
+          "parent_word": {
+            "type": "string"
+          },
+          "defdtype": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "word",
+              "phrase",
+              "derivative",
+              "idiom",
+              "phraseVerb",
+              "unknown"
+            ]
+          },
+          "chn": {
+            "type": "string"
+          },
+          "chn_plain": {
+            "type": "string"
+          },
+          "all_chn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "all_def": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "all_chn_plain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "all_def_plain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "audio": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "file",
+          "asset_path"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "compPic",
+              "shouyePic",
+              "thumbNail"
+            ]
+          },
+          "file": {
+            "type": "string"
+          },
+          "asset_path": {
+            "type": "string"
+          },
+          "caption": {
+            "type": "string"
+          },
+          "width": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "height": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "credit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "required": [
+        "prev",
+        "next",
+        "derivatives",
+        "compounds_and_phrases"
+      ],
+      "properties": {
+        "prev": {
+          "$ref": "#/$defs/link"
+        },
+        "next": {
+          "$ref": "#/$defs/link"
+        },
+        "derivatives": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "compounds_and_phrases": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "required": [
+        "sense_count",
+        "example_count",
+        "phrase_count",
+        "entry_group_count"
+      ],
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "properties": {
+        "sense_count": {
+          "type": "integer"
+        },
+        "example_count": {
+          "type": "integer"
+        },
+        "phrase_count": {
+          "type": "integer"
+        },
+        "entry_group_count": {
+          "type": "integer"
+        },
+        "edition_count": {
+          "type": "integer"
+        },
+        "editions_present": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "by_edition": {
+          "type": "object",
+          "description": "各词典版本下的条目数"
+        },
+        "related_bianxi": {
+          "type": "integer"
+        },
+        "related_qiaoji": {
+          "type": "integer"
+        },
+        "related_archetype": {
+          "type": "integer"
+        },
+        "related_sugg": {
+          "type": "integer"
+        },
+        "related_shards": {
+          "type": "integer"
+        },
+        "pronunciation_count": {
+          "type": "integer"
+        },
+        "image_count": {
+          "type": "integer"
+        }
+      }
+    },
+    "related": {
+      "type": "object",
+      "description": "跨版本共享素材（辨析/用法栏目、词形变化、同反义、词族）",
+      "properties": {
+        "bianxi": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "qiaoji": {
+          "type": "object"
+        },
+        "archetype": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "_note": {
+          "type": "string"
+        },
+        "sugg": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "shards": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pinyin": {
+          "type": "object"
+        },
+        "image_marks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "description": "该词在词库中的全部条目记录（= 全部义项组），逐条保留其各词典版本的释义块",
+      "items": {
+        "type": "object",
+        "required": [
+          "uwid",
+          "definitions"
+        ],
+        "properties": {
+          "uwid": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          },
+          "entry_type": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "integer"
+          },
+          "cefr": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "oxford_3000": {
+            "type": "boolean"
+          },
+          "oxford_5000": {
+            "type": "boolean"
+          },
+          "chn": {
+            "type": "string"
+          },
+          "def": {
+            "type": "string"
+          },
+          "pos": {
+            "type": "string"
+          },
+          "defdtype": {
+            "type": "string"
+          },
+          "parent_uwid": {
+            "type": "string"
+          },
+          "parent_word": {
+            "type": "string"
+          },
+          "all_chn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "all_def": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "prev": {
+            "$ref": "#/$defs/link"
+          },
+          "next": {
+            "$ref": "#/$defs/link"
+          },
+          "pronunciations": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "definitions": {
+            "type": "object"
+          },
+          "topic_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "link": {
+      "type": "object",
+      "required": [
+        "uwid",
+        "key"
+      ],
+      "properties": {
+        "uwid": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

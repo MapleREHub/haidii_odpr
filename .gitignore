@@ -1,0 +1,24 @@
+# ── 虚拟环境 / 构建产物 ────────────────────────────────
+.venv/
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+src/*.zip
+
+# ── 逆向中间产物（体积大，可由 tools/ 下的脚本重新生成）──
+work/
+
+# ── 解析出的词典数据（**不随仓库分发**）────────────────
+#   crawler/out/  是 24.5 万个词条 JSON（约 3.0 GB），
+#   由 `python -m oald10.cli --extract/--scope all` 重新生成。
+crawler/out/
+
+# ── 原始 APK（版权物，不随仓库分发）──────────────────
+*.apk
+
+# ── 编辑器 / 测试缓存 ─────────────────────────────────
+.idea/
+.vscode/
+.pytest_cache/

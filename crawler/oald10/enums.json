@@ -1,0 +1,249 @@
+{
+  "$comment": "词典内部编码值字典；由 tools/build_enums.py 从真实词库统计生成",
+  "defdtype": {
+    "description": "词典版本码；出现在 dictionary 的 key、def.defdtype、example.dtype、phrases.defdtype",
+    "values": {
+      "17001": "牛津高阶英汉双解词典（第9版）",
+      "17200": "朗文当代英语词典",
+      "17203": "牛津英语用法词典（OALD）",
+      "17207": "百科类",
+      "17208": "牛津高阶英汉双解词典（第10版）",
+      "21134": "牛津初阶英汉双解词典（第4版）",
+      "21135": "牛津中阶英汉双解词典（第5版）"
+    }
+  },
+  "entry_type": {
+    "description": "条目类型；源字段 dict.raw 的 type",
+    "values": {
+      "word": "独立词头",
+      "phrase": "短语",
+      "derivative": "派生词",
+      "idiom": "习语",
+      "phraseVerb": "短语动词"
+    },
+    "observed": {
+      "phrase": 2019,
+      "word": 1132,
+      "derivative": 1116,
+      "idiom": 623,
+      "phraseVerb": 172
+    }
+  },
+  "lang": {
+    "description": "发音语言码；源字段 pron[].lang",
+    "values": {
+      "b": "英式英语 (BrE)",
+      "u": "美式英语 (NAmE)",
+      "z": "中文"
+    },
+    "observed": {
+      "b": 10901,
+      "u": 7775,
+      "z": 2149,
+      "ea": 1
+    }
+  },
+  "pron_version": {
+    "description": "发音记录版本号；源字段 pron[].v",
+    "values": {
+      "5": "当前版本"
+    },
+    "observed": {
+      "5": 20826
+    }
+  },
+  "collect_head": {
+    "description": "首字母/分组标记；源字段 collectHead（例句库）",
+    "values": {
+      "A": "A 组",
+      "B": "B 组",
+      "C": "C 组",
+      "D": "D 组",
+      "E": "E 组",
+      "F": "F 组",
+      "G": "G 组",
+      "H": "H 组",
+      "I": "I 组",
+      "J": "J 组",
+      "K": "K 组",
+      "L": "L 组",
+      "M": "M 组",
+      "N": "N 组",
+      "O": "O 组",
+      "P": "P 组",
+      "Q": "Q 组",
+      "R": "R 组",
+      "S": "S 组",
+      "T": "T 组",
+      "U": "U 组",
+      "V": "V 组",
+      "W": "W 组",
+      "X": "X 组",
+      "Y": "Y 组",
+      "Z": "Z 组",
+      "#": "数字与符号组",
+      "$": "货币组"
+    },
+    "note": "中文条目用汉字作分组标记（如「他」「我」「在」），属于中文词典排序分组",
+    "observed": {
+      "T": 1491,
+      "A": 902,
+      "H": 587,
+      "I": 551,
+      "S": 481,
+      "W": 305,
+      "C": 168,
+      "Y": 145,
+      "D": 145,
+      "M": 139,
+      "F": 113,
+      "B": 101,
+      "P": 101,
+      "L": 78,
+      "O": 68,
+      "E": 67,
+      "G": 65,
+      "J": 62,
+      "N": 62,
+      "Z": 52,
+      "R": 48,
+      "他": 44,
+      "K": 32,
+      "U": 24,
+      "她": 18,
+      "我": 17,
+      "X": 17,
+      "V": 17,
+      "Q": 16,
+      "不": 15,
+      "#": 14,
+      "你": 13,
+      "在": 9,
+      "电": 8,
+      "放": 7,
+      "水": 7,
+      "从": 6,
+      "三": 6,
+      "比": 5,
+      "神": 5
+    }
+  },
+  "flag": {
+    "description": "例句标志；源字段 flag",
+    "values": {
+      "example": "例句"
+    },
+    "observed": {
+      "example": 8089
+    }
+  },
+  "example_type": {
+    "description": "例句条目的 type 字段（与 entry_type 不同）",
+    "values": {
+      "0": "内部标记 0（多为带词元强调 <lemma> 的例句）",
+      "1": "内部标记 1",
+      "sentence": "整句例句"
+    },
+    "observed": {
+      "0": 1605,
+      "sentence": 801,
+      "1": 6,
+      "xinxice": 1
+    }
+  },
+  "usage_box_title": {
+    "description": "OALD 用法栏目标题（辨析库 unbox / h 字段）",
+    "values": {
+      "SYNONYMS": "同义词辨析",
+      "WHICH WORD?": "词语辨析",
+      "COLLOCATIONS": "词语搭配",
+      "HOMOPHONES": "同音词",
+      "EXPRESS YOURSELF": "情景表达",
+      "USAGE": "用法说明",
+      "GRADING": "等级说明",
+      "TAKING THE STRESS": "重音提示"
+    },
+    "observed": {
+      "USAGE": 165
+    }
+  },
+  "archetype_tag": {
+    "description": "派生词标记（archetype.raw 的值）；key 是词形，值是与词干的形态关系标记",
+    "values": {
+      "e": "比较级加 e",
+      "y": "比较级变 y 为 i",
+      "er": "比较级后缀",
+      "est": "最高级后缀",
+      "le": "辅音+y 型",
+      "ing": "现在分词",
+      "ed": "过去式/过去分词",
+      "d": "规则过去式",
+      "t": "规则过去式（-t）",
+      "k": "不规则过去式（-k）",
+      "r": "不规则过去式（-r）",
+      "l": "不规则过去式（-l）",
+      "n": "不规则过去式（-n）",
+      "ate": "规则过去式（-ate）",
+      "te": "规则过去式（-te）"
+    },
+    "note": "空串表示与词干直接相同（原形复用）",
+    "observed": {
+      "": 1040,
+      "y": 216,
+      "e": 207,
+      "le": 126,
+      "t": 119,
+      "er": 93,
+      "l": 71,
+      "r": 64,
+      "h": 58,
+      "k": 58,
+      "d": 49,
+      "n": 44,
+      "ate": 41,
+      "te": 38,
+      "en": 35,
+      "ch": 34,
+      "se": 33,
+      "p": 32,
+      "re": 27,
+      "ty": 27,
+      "ter": 27,
+      "ous": 26,
+      "s": 26,
+      "o": 26,
+      "ce": 25,
+      "ry": 25,
+      "et": 25,
+      "on": 25,
+      "m": 22,
+      "el": 22
+    }
+  },
+  "audio_url_layout": {
+    "description": "音频直链格式",
+    "value": "https://audio.haidii.com/audio/{dtype}/{lang}/{const}/{itemHash}/{file}.mp3",
+    "note": "const 按词典版本固定；itemHash 每个音频条目独有，本地数据无推导规则，只能反查"
+  },
+  "scode": {
+    "description": "发音记录 ID（形如 YnobTE）",
+    "note": "APK 内无解码表；音标以 pron[].symbol 为准（输出为 ipa 字段）"
+  },
+  "markup_tags": {
+    "description": "释义正文里的内联标记",
+    "values": {
+      "<gramcolor>…</gramcolor>": "语法标签（可数名词/及物动词…）",
+      "<geocolor>…</geocolor>": "地域标签（BrE/NAmE…）与语源语言（from Latin…）",
+      "<poscolor>…</poscolor>": "词类标签",
+      "<formcolor>…</formcolor>": "词形标签（比较级/过去式…）",
+      "<em2>…</em2>": "交叉引用（见 …）",
+      "<er subuwid='…'>…</er>": "带 uwid 的交叉引用",
+      "<fullname subuwid='…'>…</fullname>": "词性全称",
+      "<mk>…</mk>": "构词词根强调",
+      "<lemma>…</lemma>": "词元标记",
+      "<hui>…</hui>": "用法强调",
+      "<fangkuang>…</fangkuang>": "用法框",
+      "<ch>…</ch>": "中文片段"
+    }
+  }
+}
